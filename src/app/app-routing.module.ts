@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UsersComponent } from './users/users.component';
-import { UserDetailComponent } from './users/user-detail/user-detail.component';
 
 
 const routes: Routes = [
@@ -26,28 +24,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-/*
-{
-        path: 'user-detail',
-        component: UserDetailComponent,
-        data: {
-          breadcrumb: 'Usuário'
-        },
-        children: [
-          {
-            path: 'repos',
-            component: UsersComponent,
-            data: {
-              breadcrumb: 'Repositórios'
-            },
-          },
-          {
-            path: 'starred',
-            component: UsersComponent,
-            data: {
-              breadcrumb: 'Estrelou'
-            },
-          },
-        ]
-      }
-*/
