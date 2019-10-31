@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     try {
       this.initTranslate();
     } catch (error) {
-      console.log("ngOnInit -> error", error)
+      console.log('ngOnInit() -> error', error);
 
     }
   }

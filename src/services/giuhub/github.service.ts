@@ -17,7 +17,8 @@ export class GithubService extends BaseService {
 
   constructor(
     private translateService: TranslateService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    protected http: HttpClient
   ) {
     super();
     this.translateService.get([
@@ -103,7 +104,6 @@ export class GithubService extends BaseService {
 
   private commumErros(message: string, error: any) {
     try {
-
       if (navigator.onLine) {
         if ('status' in error && error.status === 404 && error.status !== 0) {
           this.snackBar.open(message, null, { duration: 3000 });

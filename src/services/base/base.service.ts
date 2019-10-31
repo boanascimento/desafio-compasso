@@ -2,7 +2,6 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
 import { timeout } from 'rxjs/operators';
-import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class BaseService {
@@ -10,7 +9,7 @@ export class BaseService {
   private timeOut: number;
 
   constructor(
-    private http?: HttpClient,
+    protected http?: HttpClient,
   ) { this.timeOut = 30000; }
 
   protected get(endpoint: string, params?: any, reqOpts?: any) {
