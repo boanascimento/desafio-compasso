@@ -1,0 +1,7 @@
+{
+	"getReposUserListError": "O usuário não possui repositórios cadastrados!",
+	"getUsersError": "O usuário não foi encontrado!",
+	"getStarredUserListError": "Não foi possível recuperar os repositórios estrelados pelo usuário!",
+	"timeoutErrorMessage":"Tempo de responsta ultrapassado!",
+	"networErrorMessage":"Você está sem internet no momento!"
+}
