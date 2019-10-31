@@ -8,14 +8,15 @@ import { Repo } from 'src/models/starredRepo.module';
 
 @Injectable()
 export class GithubService extends BaseService {
+
   private textGetReposUserList: string;
   private textGetUsersError: string;
   private textGetStarredUserList: string;
   private textTimeoutErrorMessage: string;
   private textNetworkErrorMessage: string;
+
   constructor(
-    protected translateService: TranslateService,
-    protected http: HttpClient,
+    private translateService: TranslateService,
     private snackBar: MatSnackBar
   ) {
     super();

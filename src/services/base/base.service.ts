@@ -10,8 +10,7 @@ export class BaseService {
   private timeOut: number;
 
   constructor(
-    protected translateService?: TranslateService,
-    protected http?: HttpClient,
+    private http?: HttpClient,
   ) { this.timeOut = 30000; }
 
   protected get(endpoint: string, params?: any, reqOpts?: any) {

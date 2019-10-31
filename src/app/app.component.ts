@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
     }
   }
   private initTranslate() {
-    // Set the default language for translation strings, and the current language.
+    // Lingua prncipal.
     this.translate.setDefaultLang('pt-br');
     const browserLang = this.translate.getBrowserLang();
 
@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
         this.translate.use(this.translate.getBrowserLang());
       }
     } else {
-      this.translate.use('pt-br'); // Set your language here
+      this.translate.use('pt-br');
     }
   }
 }
