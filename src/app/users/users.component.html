@@ -20,7 +20,7 @@
 					<div class="col-md-9 justify-content-md-center">
 						<div class="row">
 							<div class="col-md-12">
-								{{ name | translate}}: {{user.name}}
+								{{ 'name' | translate}}: {{user.name}}
 							</div>
 						</div>
 						<div class="row">
@@ -32,7 +32,7 @@
 				</div>
 			</mat-card>
 			<div *ngIf="!foundUser">
-				<img class="margin-bottom img-empty" src="../assets/icons/img_antencao.svg" *ngIf="!notFound">
+				<img class="margin-bottom img-empty" src="../assets/icons/img_antencao.svg">
 			</div>
 		</div>
 	</div>
