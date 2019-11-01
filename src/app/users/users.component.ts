@@ -60,8 +60,8 @@ export class UsersComponent extends BaseComponent implements OnInit {
   }
 
   doSomething(e) {
-  console.log('TCL: UsersComponent -> doSomething -> e', e);
-    
+    console.log('TCL: UsersComponent -> doSomething -> e', e);
+
   }
 
 }
