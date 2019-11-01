@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BaseComponent } from './base/base.component';
-import { MatSnackBarModule } from '@angular/material';
+import { MatSnackBarModule, MatToolbarModule } from '@angular/material';
 import { GithubService } from 'src/services/giuhub/github.service';
 import { BaseService } from 'src/services/base/base.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -41,7 +41,8 @@ export function createTranslateLoader(http: HttpClient) {
     MatSnackBarModule,
     HttpClientModule,
     UsersComponentModule,
-    UserDetailComponentModule
+    UserDetailComponentModule,
+    MatToolbarModule
   ],
   providers: [
     BaseService,

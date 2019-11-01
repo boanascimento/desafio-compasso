@@ -11,7 +11,7 @@
 				<button (click)="getUser(userName)" class="btn btn-primary margin-bottom">Buscar usuário</button>
 			</form>
 			<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
-			<mat-card *ngIf="user && foundUser" (click)="goToUserDetail()">
+			<mat-card *ngIf="user && foundUser" (click)="goToUserDetail()" class="full-width default-box-shadow">
 				<div class="row align-items-center">
 					<div class="col-md-3 justify-content-center">
 						<img [src]="user.avatar_url" class="avatar-img">

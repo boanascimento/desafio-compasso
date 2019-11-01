@@ -11,23 +11,7 @@ const routes: Routes = [
     component: UserDetailComponent,
     data: {
       breadcrumb: 'Usuário'
-    },
-    children: [
-      {
-        path: 'repos',
-        component: ReposComponent,
-        data: {
-          breadcrumb: 'Repositórios'
-        },
-      },
-      {
-        path: 'starred',
-        component: StarredComponent,
-        data: {
-          breadcrumb: 'Repositórios estrelados'
-        },
-      },
-    ]
+    }
   }
 ];
 

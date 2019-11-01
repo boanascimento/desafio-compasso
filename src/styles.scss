@@ -87,3 +87,7 @@ $font-path: "../assets/fonts";
   max-width: 10rem;
   border-radius: 0.2rem;
 }
+
+.default-box-shadow {
+  box-shadow: 0 0 1em rgba(78, 82, 103, 0.3) !important;
+}

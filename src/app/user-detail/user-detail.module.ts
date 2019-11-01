@@ -7,17 +7,14 @@ import {
   MatProgressBarModule,
   MatInputModule,
   MatCardModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatTableModule
 } from '@angular/material';
-import { ReposComponent } from './repos/repos.component';
-import { StarredComponent } from './starred/starred.component';
 import { UserDetailRoutingModule } from './user-detail-routing.module';
 import { UserDetailComponent } from './user-detail.component';
 
 @NgModule({
   declarations: [
-    ReposComponent,
-    StarredComponent,
     UserDetailComponent
   ],
   imports: [
@@ -32,6 +29,7 @@ import { UserDetailComponent } from './user-detail.component';
     MatCardModule,
     MatInputModule,
     MatProgressBarModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [UserDetailComponent]
