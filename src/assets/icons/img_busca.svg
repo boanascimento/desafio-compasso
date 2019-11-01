@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320px" height="119px" viewBox="0 0 320 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>img_busca</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="busca-por-usuario" transform="translate(-960.000000, -472.000000)">
+            <g id="img_busca" transform="translate(960.000000, 472.000000)">
+                <g id="Group-3" transform="translate(106.000000, 0.000000)">
+                    <circle id="Oval" stroke="#B1B1B1" stroke-width="2" cx="40" cy="40" r="39"></circle>
+                    <rect id="Rectangle" fill="#B1B1B1" transform="translate(84.000000, 94.500000) rotate(-45.000000) translate(-84.000000, -94.500000) " x="83" y="62" width="2" height="65" rx="1"></rect>
+                </g>
+                <g id="Group-3-Copy" opacity="0.4" transform="translate(230.000000, 9.500000)">
+                    <circle id="Oval" stroke="#B1B1B1" stroke-width="2" cx="33.5" cy="34" r="32.5"></circle>
+                    <path d="M70.1137955,52.2146359 C70.5721152,52.2127182 70.9452112,52.5827051 70.9471289,53.0410247 C70.9471385,53.0433395 70.9471385,53.0456544 70.9471289,53.0479692 L70.7265406,105.768557 C70.7246021,106.231857 70.349504,106.606955 69.8862045,106.608894 C69.4278848,106.610811 69.0547888,106.240824 69.0528711,105.782505 C69.0528615,105.78019 69.0528615,105.777875 69.0528711,105.77556 L69.2734594,53.054972 C69.2753979,52.5916725 69.650496,52.2165743 70.1137955,52.2146359 Z" id="Rectangle" fill="#B1B1B1" transform="translate(70.000000, 79.411765) rotate(-45.000000) translate(-70.000000, -79.411765) "></path>
+                </g>
+                <g id="Group-3-Copy-2" opacity="0.4" transform="translate(0.000000, 9.500000)">
+                    <circle id="Oval" stroke="#B1B1B1" stroke-width="2" cx="33.5" cy="34" r="32.5"></circle>
+                    <path d="M70.1137955,52.2146359 C70.5721152,52.2127182 70.9452112,52.5827051 70.9471289,53.0410247 C70.9471385,53.0433395 70.9471385,53.0456544 70.9471289,53.0479692 L70.7265406,105.768557 C70.7246021,106.231857 70.349504,106.606955 69.8862045,106.608894 C69.4278848,106.610811 69.0547888,106.240824 69.0528711,105.782505 C69.0528615,105.78019 69.0528615,105.777875 69.0528711,105.77556 L69.2734594,53.054972 C69.2753979,52.5916725 69.650496,52.2165743 70.1137955,52.2146359 Z" id="Rectangle" fill="#B1B1B1" transform="translate(70.000000, 79.411765) rotate(-45.000000) translate(-70.000000, -79.411765) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

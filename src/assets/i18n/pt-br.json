@@ -1,7 +1,14 @@
 {
+	"name": "Nome",
+	"email":"E-mail",
+
 	"getReposUserListError": "O usuário não possui repositórios cadastrados!",
 	"getUsersError": "O usuário não foi encontrado!",
 	"getStarredUserListError": "Não foi possível recuperar os repositórios estrelados pelo usuário!",
 	"timeoutErrorMessage":"Tempo de responsta ultrapassado!",
-	"networErrorMessage":"Você está sem internet no momento!"
+	"networErrorMessage":"Você está sem internet no momento!",
+	"userComponentTitle": "Busca de usuários do GitHub",
+	"projectTitle": "Teste Compasso - Boanerges Souza",
+	"userLogin": "Login do usuario ",
+	"searchUser": "Buscar usuário"
 }
