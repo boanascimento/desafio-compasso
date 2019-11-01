@@ -8,7 +8,8 @@ import {
   MatInputModule,
   MatCardModule,
   MatFormFieldModule,
-  MatTableModule
+  MatTableModule,
+  MatPaginatorModule
 } from '@angular/material';
 import { UserDetailRoutingModule } from './user-detail-routing.module';
 import { UserDetailComponent } from './user-detail.component';
@@ -30,6 +31,7 @@ import { UserDetailComponent } from './user-detail.component';
     MatInputModule,
     MatProgressBarModule,
     MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [UserDetailComponent]

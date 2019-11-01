@@ -14,8 +14,6 @@ export class BaseComponent implements OnInit {
   ngOnInit() {
   }
 
-  
-
   /**
    * Usado para guardar um objeto no localStorage.
    * @param key Chave do item a ser guardado.
@@ -24,19 +22,6 @@ export class BaseComponent implements OnInit {
   protected storageJSON(key: string, json: any) {
     try {
       localStorage.setItem(key, JSON.stringify(json));
-    } catch (error) {
-      console.log('storageData() - error: ', error);
-    }
-  }
-
-  /**
-   * Usado para guardar um dadod o tipo string no localStorage.
-   * @param key Chave do item a ser guardado.
-   * @param data Dado a ser guardado.
-   */
-  protected storageString(key: string, data: string) {
-    try {
-      localStorage.setItem(key, data);
     } catch (error) {
       console.log('storageData() - error: ', error);
     }

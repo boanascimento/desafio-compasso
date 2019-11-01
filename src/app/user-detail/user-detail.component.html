@@ -1,7 +1,10 @@
-<div class="container">
+<div class="container fade-in">
 	<div class="row">
 		<div class="col-md-4">
-			<mat-card class="margin full-width default-box-shadow">
+			<h4 class="margin-bottom">
+				Detalhes do usuário
+			</h4>
+			<mat-card class="full-width default-box-shadow margin-bottom">
 				<div class="row align-items-center">
 					<div class="col-md-12 justify-content-center">
 						<img [src]="user.avatar_url" class="avatar-img">
@@ -24,31 +27,37 @@
 			</mat-card>
 			<div class="row align-items-center">
 				<div class="col-md-6">
-					<button (click)="getRepos(setContextViewLike.repos)" class="btn btn-primary margin full-width">Repos</button>
+					<button (click)="getRepos(setContextViewLike.repos)" class="btn btn-primary  full-width">Repos</button>
 				</div>
 				<div class="col-md-6">
-					<button (click)="getRepos(setContextViewLike.starred)" class="btn btn-primary margin full-width">Starred
+					<button (click)="getRepos(setContextViewLike.starred)" class="btn btn-primary  full-width">Starred
 						repos</button>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-8">
-			<table mat-table [dataSource]="repos" class="margin full-width default-box-shadow	">
-				<!-- Position Column class="mat-column-name"-->
-				<ng-container matColumnDef="name">
-					<th mat-header-cell *matHeaderCellDef> Nome </th>
-					<td mat-cell *matCellDef="let element"> {{element.name}} </td>
-				</ng-container>
+		<div class="col-md">
+			<div *ngIf="repos.length > 0">
+				<h4 class="margin-bottom">
+					{{tableName}}
+				</h4>
+				<table mat-table [dataSource]="repos" class=" full-width default-box-shadow">
+					<!-- Position Column class="mat-column-name"-->
+					<ng-container matColumnDef="name">
+						<th mat-header-cell *matHeaderCellDef> Nome </th>
+						<td mat-cell *matCellDef="let element"> {{element.name}} </td>
+					</ng-container>
 
-				<!-- Name Column class="mat-column-owner"-->
-				<ng-container matColumnDef="owner">
-					<th mat-header-cell *matHeaderCellDef> Proprietário </th>
-					<td mat-cell *matCellDef="let element"> {{element.owner}} </td>
-				</ng-container>
+					<!-- Name Column class="mat-column-owner"-->
+					<ng-container matColumnDef="owner">
+						<th mat-header-cell *matHeaderCellDef> Proprietário </th>
+						<td mat-cell *matCellDef="let element"> {{element?.owner?.login}} </td>
+					</ng-container>
 
-				<tr mat-header-row *matHeaderRowDef="columnsName"></tr>
-				<tr mat-row *matRowDef="let row; columns: columnsName;"></tr>
-			</table>
+					<tr mat-header-row *matHeaderRowDef="columnsName"></tr>
+					<tr mat-row *matRowDef="let row; columns: columnsName;"></tr>
+				</table>
+				<mat-paginator [pageSizeOptions]="[8]" showFirstLastButtons class=" default-box-shadow"></mat-paginator>
+			</div>
 		</div>
 	</div>
 </div>

@@ -14,6 +14,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UsersComponentModule } from './users/users.module';
 import { UserDetailComponentModule } from './user-detail/user-detail.module';
+import { LazyLoadImageModule, scrollPreset } from 'ng-lazyload-image';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -42,7 +43,10 @@ export function createTranslateLoader(http: HttpClient) {
     HttpClientModule,
     UsersComponentModule,
     UserDetailComponentModule,
-    MatToolbarModule
+    MatToolbarModule,
+    LazyLoadImageModule.forRoot({
+      preset: scrollPreset,
+    })
   ],
   providers: [
     BaseService,

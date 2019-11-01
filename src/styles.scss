@@ -1,14 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 $font-path: "../assets/fonts";
 
-@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
 
 :root {
   --snack-bar-bg-color: rgba(255, 96, 96, 0.829);
-
-  // Apagar
+  --line-a-color: rgba(65, 68, 85, 0.876);
   --default-transition-time: 0.8s;
   --default-blue-color: #00b5e2;
+
+  // Apagar
   --secondary-blue-color: #005e98;
   --default-red-color: #d0021b;
   --selected-backgroun-color: rgb(238, 237, 237);
@@ -16,7 +17,6 @@ $font-path: "../assets/fonts";
   --subtitle-color: #555555;
   --questins-color: #292929;
   --p-subtitle-color: #757575;
-  --line-divisor-color: rgba(65, 68, 85, 0.226);
   --grey-border-color: rgba(120, 124, 131, 0.65);
   --snack-bar-blue-color: #00b5e2b9;
   --modal-bg-color: #f4f4f4;
@@ -90,4 +90,22 @@ $font-path: "../assets/fonts";
 
 .default-box-shadow {
   box-shadow: 0 0 1em rgba(78, 82, 103, 0.3) !important;
+}
+
+// Animações
+.fade-in {
+  animation: fade-in var(--default-transition-time);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+// FIM - Animações
+
+h4, h2 {
+  color: var(--default-blue-color);
 }

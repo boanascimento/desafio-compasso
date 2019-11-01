@@ -1,17 +1,13 @@
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
+<mat-toolbar class="default-box-shadow margin-bottom">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
 
-			<mat-toolbar>
-				<a mat-list-item target="_self" [routerLink]="['users']" class="item">
-					Teste Compasso - Boanerges Souza
+				<a mat-button target="_self" [routerLink]="['users']" class="item">
+					{{ 'projectTitle' | translate}}
 				</a>
-			</mat-toolbar>
+			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<router-outlet></router-outlet>
-		</div>
-	</div>
-</div>
+</mat-toolbar>
+<router-outlet></router-outlet>
