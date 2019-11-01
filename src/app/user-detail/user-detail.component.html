@@ -1,0 +1,41 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<mat-card class="margin">
+				<div class="row align-items-center">
+					<div class="col-md-12 justify-content-center">
+						<img [src]="user.avatar_url" class="avatar-img">
+					</div>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-md-12 justify-content-md-center">
+						<div class="row">
+							<div class="col-md-12">
+								Nome: {{user.name}}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								E-mail: {{user.email}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</mat-card>
+			<div class="row align-items-center">
+				<div class="col-md-6">
+					<button (click)="getRepos(setContextViewLike.repos)" class="btn btn-primary margin full-width">Repos</button>
+				</div>
+				<div class="col-md-6">
+					<button (click)="getRepos(setContextViewLike.starred)" class="btn btn-primary margin full-width">Starred
+						repos</button>
+				</div>
+			</div>
+
+
+		</div>
+		<div class="col-md-8">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</div>

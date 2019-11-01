@@ -1,1 +1,38 @@
-<p>users works!</p>
+<div class="container">
+	<div class="row align-items-center">
+		<div class="col-md-12">
+
+			<h1>Usuário</h1>
+			<form >
+				<mat-form-field class="full-width">
+					<input matInput placeholder="Nome do usuário" [(ngModel)]="userName"
+					ngModel #inputFilter name="inputFilter" class="full-width">
+				</mat-form-field>
+				<button (click)="getUser(userName)" class="btn btn-primary margin-bottom">Buscar usuário</button>
+			</form>
+			<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+			<mat-card *ngIf="user && foundUser" (click)="goToUserDetail()">
+				<div class="row align-items-center">
+					<div class="col-md-3 justify-content-center">
+						<img [src]="user.avatar_url" class="avatar-img">
+					</div>
+					<div class="col-md-9 justify-content-md-center">
+						<div class="row">
+							<div class="col-md-12">
+								Nome: {{user.name}}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								E-mail: {{user.email}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</mat-card>
+			<div *ngIf="!foundUser">
+				<img class="margin-bottom img-empty" src="../assets/icons/img_antencao.svg" *ngIf="!notFound">
+			</div>
+		</div>
+	</div>
+</div>

@@ -33,18 +33,19 @@ export class GithubService extends BaseService {
       this.textGetStarredUserList = values.getStarredUserListError;
       this.textTimeoutErrorMessage = values.timeoutErrorMessage;
       this.textNetworkErrorMessage = values.networErrorMessage;
-    }).unsubscribe();
+    });
   }
 
   /**
    * Usado para buscar a lista de repositórios do usuário.
-   * @param user usuário selecionado.
+   * @param user Login do usuário selecionado.
+   * @param sufix Sufíxo do endpoit
    * @returns Promise<Repo[]>
    */
-  public async getReposUserList(user: string): Promise<Repo[]> {
+  public async getReposUserList(user: string, sufix: string): Promise<Repo[]> {
     try {
       return new Promise((resolv, reject) => {
-        this.get(`/${user}/repos`).subscribe((response: any) => {
+        this.get(`/${user}/${sufix}`).subscribe((response: any) => {
           const res: Repo[] = Repo.toArray(response);
           resolv(res);
         }, error => {
@@ -80,38 +81,17 @@ export class GithubService extends BaseService {
     }
   }
 
-  /**
-   * Usado para buscar a lista de repositórios estrelados pelo usuário.
-   * @param user usuário selecionado.
-   * @returns Promise<Repo[]>
-   */
-  public async getStarredUserList(user: number): Promise<Repo[]> {
-    try {
-      return new Promise((resolv, reject) => {
-        this.delete(`/${user}/starred`).subscribe((response: any) => {
-          const res: Repo[] = Repo.toArray(response);
-          resolv(res);
-        }, error => {
-          this.commumErros(this.textGetStarredUserList, error);
-          reject(error);
-        });
-      });
-
-    } catch (error) {
-      console.log('deleteReligion() - error: ', error);
-    }
-  }
-
   private commumErros(message: string, error: any) {
     try {
+      const timeToLeave = 5000;
       if (navigator.onLine) {
         if ('status' in error && error.status === 404 && error.status !== 0) {
-          this.snackBar.open(message, null, { duration: 3000 });
+          this.snackBar.open(message, null, { duration: timeToLeave });
         } else if ('name' in error && error.name === 'TimeoutError') {
-          this.snackBar.open(this.textTimeoutErrorMessage, null, { duration: 3000 });
+          this.snackBar.open(this.textTimeoutErrorMessage, null, { duration: timeToLeave, panelClass: '' });
         }
       } else {
-        this.snackBar.open(this.textNetworkErrorMessage, null, { duration: 3000 });
+        this.snackBar.open(this.textNetworkErrorMessage, null, { duration: timeToLeave });
       }
     } catch (error) {
       console.log('commumErros() - error: ', error);

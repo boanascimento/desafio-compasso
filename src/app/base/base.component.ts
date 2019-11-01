@@ -7,9 +7,65 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BaseComponent implements OnInit {
 
+  protected lsUser = 'selectedUser';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  
+
+  /**
+   * Usado para guardar um objeto no localStorage.
+   * @param key Chave do item a ser guardado.
+   * @param json JSON do item a ser guardado.
+   */
+  protected storageJSON(key: string, json: any) {
+    try {
+      localStorage.setItem(key, JSON.stringify(json));
+    } catch (error) {
+      console.log('storageData() - error: ', error);
+    }
+  }
+
+  /**
+   * Usado para guardar um dadod o tipo string no localStorage.
+   * @param key Chave do item a ser guardado.
+   * @param data Dado a ser guardado.
+   */
+  protected storageString(key: string, data: string) {
+    try {
+      localStorage.setItem(key, data);
+    } catch (error) {
+      console.log('storageData() - error: ', error);
+    }
+  }
+
+  /**
+   * Usado para deletar um dado do localStorage.
+   * @param key Chave do item guardado.
+   */
+  protected removeStoragedItem(key: string) {
+    try {
+      localStorage.removeItem(key);
+    } catch (error) {
+      console.log('storageData() - error: ', error);
+    }
+  }
+
+  /**
+   * Usado para buscar um dado do tipo JSON no localStorage.
+   * @param key Chave do item a ser recuperado.
+   */
+  protected getStoragedJson(key: string) {
+    try {
+      const item: string = localStorage.getItem(key);
+      const json = JSON.parse(item);
+      return json;
+    } catch (error) {
+      console.log('storageData() - error: ', error);
+    }
   }
 
 }
