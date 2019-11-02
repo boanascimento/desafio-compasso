@@ -36,15 +36,12 @@ export class UsersComponent extends BaseComponent implements OnInit {
       const result: User = await this.gitHubeService.getUsers(user).catch(error => {
         this.loading = false;
         this.foundUser = false;
-
-        console.log('TCL: UsersComponent -> getUser -> error', error);
       }) as User;
       if (result) {
         this.loading = false;
 
         this.user = result;
         this.storageJSON(this.lsUser, this.user);
-        // this.user.em
       }
     } catch (error) {
       console.log('getUser() - error: ', error);
@@ -57,11 +54,6 @@ export class UsersComponent extends BaseComponent implements OnInit {
     } catch (error) {
       console.log('goToUserDetail() - error: ', error);
     }
-  }
-
-  doSomething(e) {
-    console.log('TCL: UsersComponent -> doSomething -> e', e);
-
   }
 
 }
