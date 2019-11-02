@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { UsersRoutingModule } from './users-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonToggleModule,
@@ -26,7 +25,6 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    UsersRoutingModule,
     BrowserAnimationsModule,
     MatButtonToggleModule,
     MatButtonModule,

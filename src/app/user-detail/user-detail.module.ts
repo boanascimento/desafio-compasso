@@ -11,7 +11,6 @@ import {
   MatTableModule,
   MatPaginatorModule
 } from '@angular/material';
-import { UserDetailRoutingModule } from './user-detail-routing.module';
 import { UserDetailComponent } from './user-detail.component';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { UserDetailComponent } from './user-detail.component';
   ],
   imports: [
     BrowserModule,
-    UserDetailRoutingModule,
     BrowserAnimationsModule,
     MatButtonToggleModule,
     MatButtonModule,
