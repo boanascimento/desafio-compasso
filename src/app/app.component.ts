@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,12 @@ export class AppComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
-  ) { }
+    update: SwUpdate
+  ) {
+    update.available.subscribe( event => {
+      update.activateUpdate().then(() => document.location.reload());
+    });
+  }
   ngOnInit() {
     try {
       this.initTranslate();
