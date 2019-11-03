@@ -10,3 +10,9 @@ Para inicializar o proje é neccessário a instalação de suas dependencias com
 
 ## Inicialização do projeto
 Para servir a aplicação deverrá ser utilizado o comando `ng serve` no prompt de comando. A aplicação será servida na url `http://localhost:4200/` que é a porta padrão do Angular CLI.
+
+### PWA
+Em tempo de desenvolvimento, foi criado um PWA ao executar os passos 
+- `ng add @angular/pwa`;
+- Alterado o nome do PWA que esterá na "Home screem" do usuário no arquivo `manifest.webmanifest`;
+- Alteradas as fores no mesmo arquivo apenas para diferenciar o PWA da aplicação no browser.
