@@ -17,7 +17,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
-    UsersComponent,
+    UsersComponent
   ],
   imports: [
     TranslateModule.forChild(),
@@ -34,7 +34,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatProgressBarModule,
     LazyLoadImageModule.forRoot({
       preset: scrollPreset,
-    })
+    }),
   ],
   providers: [],
   bootstrap: [UsersComponent]

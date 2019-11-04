@@ -3,6 +3,7 @@ import { BaseComponent } from '../base/base.component';
 import { User } from 'src/models/user.module';
 import { GithubService } from 'src/services/giuhub/github.service';
 import { Repo } from 'src/models/starredRepo.module';
+import { FormControl } from '@angular/forms';
 
 enum ECheckContextView {
   starred = 'starred',
@@ -20,16 +21,29 @@ export class UserDetailComponent extends BaseComponent implements OnInit, OnDest
   public setContextViewLike = ECheckContextView;
   public repos = [];
   public tableName: string;
+  public filter: FormControl;
   constructor(
     private gitHubeService: GithubService,
 
   ) { super(); }
 
   ngOnInit() {
+    this.filter = new FormControl('', {
+    });
     this.user = this.getStoragedJson(this.lsUser);
   }
   ngOnDestroy() {
     this.removeStoragedItem(this.lsUser);
+  }
+
+  public async filterData(value: any) {
+    try {
+      value = value.trim();
+      value = value.toLowerCase();
+      this.repos.filter = value;
+    } catch (error) {
+      console.log('filter() - error: ', error);
+    }
   }
 
   public async getRepos(sufix: string) {

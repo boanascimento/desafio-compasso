@@ -12,12 +12,19 @@ import {
   MatPaginatorModule
 } from '@angular/material';
 import { UserDetailComponent } from './user-detail.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     UserDetailComponent
   ],
   imports: [
+    TranslateModule.forChild(),
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonToggleModule,
@@ -29,7 +36,7 @@ import { UserDetailComponent } from './user-detail.component';
     MatInputModule,
     MatProgressBarModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [UserDetailComponent]

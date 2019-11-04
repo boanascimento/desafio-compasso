@@ -27,10 +27,12 @@
 			</mat-card>
 			<div class="row align-items-center">
 				<div class="col-md-6">
-					<button (click)="getRepos(setContextViewLike.repos)" class="btn btn-primary  full-width">Repos</button>
+					<button (click)="getRepos(setContextViewLike.repos)"
+						class="btn btn-primary margin-bottom full-width">Repos</button>
 				</div>
 				<div class="col-md-6">
-					<button (click)="getRepos(setContextViewLike.starred)" class="btn btn-primary  full-width">Starred
+					<button (click)="getRepos(setContextViewLike.starred)"
+						class="btn btn-primary margin-bottom full-width">Starred
 						repos</button>
 				</div>
 			</div>
@@ -40,6 +42,11 @@
 				<h4 class="margin-bottom">
 					{{tableName}}
 				</h4>
+				<!-- <mat-form-field class="full-width">
+					<input (keyup)="filterData($event.target.value)" matInput placeholder="{{ 'filter' | translate }}"
+						[formControl]="filter" class="full-width">
+				</mat-form-field> -->
+
 				<table mat-table [dataSource]="repos" class=" full-width default-box-shadow">
 					<!-- Position Column class="mat-column-name"-->
 					<ng-container matColumnDef="name">
