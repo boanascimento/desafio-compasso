@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BaseComponent } from './base/base.component';
-import { MatSnackBarModule, MatToolbarModule } from '@angular/material';
+import { MatSnackBarModule, MatToolbarModule, MatProgressBarModule } from '@angular/material';
 import { GithubService } from 'src/services/giuhub/github.service';
 import { BaseService } from 'src/services/base/base.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -46,10 +46,12 @@ export function createTranslateLoader(http: HttpClient) {
     UsersComponentModule,
     UserDetailComponentModule,
     MatToolbarModule,
+    MatProgressBarModule,
     LazyLoadImageModule.forRoot({
       preset: scrollPreset,
     }),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    
   ],
   providers: [
     BaseService,
