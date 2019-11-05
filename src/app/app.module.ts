@@ -9,7 +9,7 @@ import { MatSnackBarModule, MatToolbarModule, MatProgressBarModule } from '@angu
 import { GithubService } from 'src/services/giuhub/github.service';
 import { BaseService } from 'src/services/base/base.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UsersComponentModule } from './users/users.module';
@@ -51,11 +51,11 @@ export function createTranslateLoader(http: HttpClient) {
       preset: scrollPreset,
     }),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    
   ],
   providers: [
     BaseService,
-    GithubService
+    GithubService,
+    TranslateService
   ],
   bootstrap: [AppComponent]
 })
