@@ -11,26 +11,23 @@ export class GithubService extends BaseService {
 
   private textGetReposUserList: string;
   private textGetUsersError: string;
-  private textGetStarredUserList: string;
   private textTimeoutErrorMessage: string;
   private textNetworkErrorMessage: string;
 
   constructor(
-    private translateService: TranslateService,
-    private snackBar: MatSnackBar,
-    protected http: HttpClient
+    private translateService?: TranslateService,
+    private snackBar?: MatSnackBar,
+    protected http?: HttpClient
   ) {
     super();
     this.translateService.get([
       'getReposUserListError',
       'getUsersError',
-      'getStarredUserListError',
       'timeoutErrorMessage',
       'networErrorMessage'
     ]).subscribe(values => {
       this.textGetReposUserList = values.getReposUserListError;
       this.textGetUsersError = values.getUsersError;
-      this.textGetStarredUserList = values.getStarredUserListError;
       this.textTimeoutErrorMessage = values.timeoutErrorMessage;
       this.textNetworkErrorMessage = values.networErrorMessage;
     });
@@ -75,7 +72,6 @@ export class GithubService extends BaseService {
           reject(error);
         });
       });
-
     } catch (error) {
       console.log('getUsers() - error: ', error);
     }
