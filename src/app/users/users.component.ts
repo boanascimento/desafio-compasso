@@ -39,7 +39,6 @@ export class UsersComponent extends BaseComponent implements OnInit {
       }) as User;
       if (result) {
         this.loading = false;
-
         this.user = result;
         this.storageJSON(this.lsUser, this.user);
       }

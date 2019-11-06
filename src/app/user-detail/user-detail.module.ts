@@ -2,14 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MatButtonToggleModule,
-  MatButtonModule,
-  MatProgressBarModule,
-  MatInputModule,
-  MatCardModule,
-  MatFormFieldModule,
-  MatTableModule,
-  MatPaginatorModule
+  MatButtonToggleModule, MatButtonModule, MatProgressBarModule, MatInputModule, MatCardModule,
+  MatFormFieldModule, MatTableModule, MatPaginatorModule
 } from '@angular/material';
 import { UserDetailComponent } from './user-detail.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -18,7 +12,7 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    UserDetailComponent
+    UserDetailComponent,
   ],
   imports: [
     TranslateModule.forChild(),

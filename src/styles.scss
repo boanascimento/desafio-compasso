@@ -8,20 +8,6 @@ $font-path: "../assets/fonts";
   --line-a-color: rgba(65, 68, 85, 0.876);
   --default-transition-time: 0.8s;
   --default-blue-color: #00b5e2;
-
-  // Apagar
-  --secondary-blue-color: #005e98;
-  --default-red-color: #d0021b;
-  --selected-backgroun-color: rgb(238, 237, 237);
-  --divider-item-section-color: rgb(228, 228, 228);
-  --subtitle-color: #555555;
-  --questins-color: #292929;
-  --p-subtitle-color: #757575;
-  --grey-border-color: rgba(120, 124, 131, 0.65);
-  --snack-bar-blue-color: #00b5e2b9;
-  --modal-bg-color: #f4f4f4;
-  --beneficiary-data-color: #b1b1b1;
-  --range-green-color: #78be20;
 }
 
 // Definições padrão
@@ -107,4 +93,9 @@ $font-path: "../assets/fonts";
 
 h4, h2 {
   color: var(--default-blue-color);
+}
+
+.label-card-info {
+  font-size: 0.9rem;
+  color: var(--line-a-color);
 }
