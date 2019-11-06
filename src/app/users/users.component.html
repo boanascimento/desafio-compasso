@@ -1,0 +1,49 @@
+<div class="container fade-in">
+  <div class="row align-items-center">
+    <div class="col-md-12">
+
+      <h2>{{ 'userComponentTitle' | translate }}</h2>
+      <form>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="{{ 'userLogin' | translate }}" [formControl]="userName"
+            [(ngModel)]="userName.value" required ngModel #inputFilter name="inputFilter" class="full-width">
+        </mat-form-field>
+        <button (click)="getUser(userName.value)" class="btn btn-primary margin-bottom"
+          [disabled]="userName?.errors?.required"> {{ 'searchUser' | translate }} </button>
+      </form>
+      <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+      <mat-card *ngIf="user && foundUser" (click)="goToUserDetail()" class="full-width default-box-shadow fade-in label-card-info">
+        <div class="row align-items-center">
+          <div class="col-md-2 justify-content-center">
+            <img [src]="user.avatar_url" class="avatar-img">
+          </div>
+          <div class="col-md-9 justify-content-md-center">
+            <div class="row">
+              <div class="col-md-12">
+                <b>{{ 'name' | translate}}: </b> {{user.name}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <b>{{ 'email' | translate}}: </b> {{user.email}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <b>{{ 'createdAt' | translate}}: </b> {{user.created_at | date: 'dd/MM/yyyy'}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <b>{{ 'updatedAt' | translate}}: </b> {{user.updated_at  | date: 'dd/MM/yyyy'}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <div *ngIf="!foundUser">
+        <img class="margin-bottom img-empty" src="../assets/icons/img_antencao.svg">
+      </div>
+    </div>
+  </div>
+</div>

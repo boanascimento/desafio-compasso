@@ -1,0 +1,82 @@
+<div class="container fade-in">
+  <div class="row">
+    <div class="col-md-4">
+      <h4 class="margin-bottom">
+        {{ 'userDetail' | translate}}
+      </h4>
+      <mat-card class="full-width default-box-shadow margin-bottom label-card-info">
+        <div class="row align-items-center">
+          <div class="col-md-12 justify-content-center">
+            <img [src]="user.avatar_url" class="avatar-img">
+          </div>
+        </div>
+        <div class="row align-items-center margin-top">
+          <div class="col-md-12 justify-content-md-center">
+            <div class="row">
+              <div class="col-md-12">
+                <b>{{ 'name' | translate}}: </b>{{user.name}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <b>{{ 'email' | translate}}: </b> {{user.email}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <b>{{ 'createdAt' | translate}}: </b> {{user.created_at | date: 'dd/MM/yyyy'}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <b>{{ 'updatedAt' | translate}}: </b> {{user.updated_at  | date: 'dd/MM/yyyy'}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <button (click)="getRepos(setContextViewLike.repos)"
+            class="btn btn-primary margin-bottom full-width">{{'repos' | translate}}</button>
+        </div>
+        <div class="col-md-6">
+          <button (click)="getRepos(setContextViewLike.starred)"
+            class="btn btn-primary margin-bottom full-width">{{'starredRepos' | translate}}</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md">
+      <div *ngIf="repos.length > 0">
+        <h4 class="margin-bottom">
+          {{tableName}}
+        </h4>
+        <div *ngIf="repos.length > 0">
+          <mat-form-field class="full-width fade-in">
+            <input (keyup)="filterData($event.target.value)" matInput placeholder="{{ 'filter' | translate }}"
+              [formControl]="filter" class="full-width">
+          </mat-form-field>
+
+          <table mat-table [dataSource]="dataSource" class=" full-width default-box-shadow fade-in">
+            <!-- Position Column class="mat-column-name"-->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> {{ 'name' | translate }} </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <!-- Name Column class="mat-column-owner"-->
+            <ng-container matColumnDef="owner">
+              <th mat-header-cell *matHeaderCellDef> {{ 'owner' | translate }} </th>
+              <td mat-cell *matCellDef="let element"> {{element?.owner?.login}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="columnsName"></tr>
+            <tr mat-row *matRowDef="let row; columns: columnsName;"></tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="[6]" showFirstLastButtons class="default-box-shadow"></mat-paginator>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

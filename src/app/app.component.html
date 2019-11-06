@@ -1,0 +1,15 @@
+<mat-toolbar class="default-box-shadow margin-bottom">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+				<a mat-button target="_self" [routerLink]="['users']" class="item">
+					{{ 'projectTitle' | translate}}
+				</a>
+			</div>
+		</div>
+	</div>
+</mat-toolbar>
+<div class="padding">
+	<router-outlet></router-outlet>
+</div>

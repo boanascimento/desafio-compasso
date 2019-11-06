@@ -1,0 +1,101 @@
+/* You can add global styles to this file, and also import other style files */
+$font-path: "../assets/fonts";
+
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+:root {
+  --snack-bar-bg-color: rgba(255, 96, 96, 0.829);
+  --line-a-color: rgba(65, 68, 85, 0.876);
+  --default-transition-time: 0.8s;
+  --default-blue-color: #00b5e2;
+}
+
+// Definições padrão
+.full-width {
+  width: 100% !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+.padding {
+  padding: 1rem !important;
+}
+.padding-left {
+  padding-left: 1rem !important;
+}
+.padding-bottom {
+  padding-bottom: 1rem !important;
+}
+.padding-top {
+  padding-top: 1rem !important;
+}
+.padding-right {
+  padding-right: 1rem !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+.margin {
+  margin: 1rem !important;
+}
+.margin-left {
+  margin-left: 1rem !important;
+}
+.margin-bottom {
+  margin-bottom: 1rem !important;
+}
+.margin-top {
+  margin-top: 1rem !important;
+}
+.margin-right {
+  margin-right: 1rem !important;
+}
+
+// Layout snacbar
+.error-snack-bar {
+  background-color: var(--snack-bar-bg-color);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 200;
+}
+.info-snack-bar {
+  background-color: var(--snack-bar-blue-color);
+  color: var(--questins-color);
+  font-size: 0.8rem;
+  font-weight: 200;
+}
+
+// Avatar
+.avatar-img {
+  width: 100%;
+  border-radius: 0.2rem;
+}
+
+.default-box-shadow {
+  box-shadow: 0 0 1em rgba(78, 82, 103, 0.3) !important;
+}
+
+// Animações
+.fade-in {
+  animation: fade-in var(--default-transition-time);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+// FIM - Animações
+
+h4, h2 {
+  color: var(--default-blue-color);
+}
+
+.label-card-info {
+  font-size: 0.9rem;
+  color: var(--line-a-color);
+}
