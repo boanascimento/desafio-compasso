@@ -1,9 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { BaseComponent } from '../base/base.component';
 import { User } from 'src/models/user.module';
 import { GithubService } from 'src/services/giuhub/github.service';
 import { Repo } from 'src/models/starredRepo.module';
 import { FormControl } from '@angular/forms';
+import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { TranslateService } from '@ngx-translate/core';
 
 enum ECheckContextView {
   starred = 'starred',
@@ -16,21 +18,25 @@ enum ECheckContextView {
   styleUrls: ['./user-detail.component.scss']
 })
 export class UserDetailComponent extends BaseComponent implements OnInit, OnDestroy {
-  columnsName: string[] = ['name', 'owner'];
   public user: User;
   public setContextViewLike = ECheckContextView;
   public repos = [];
   public tableName: string;
+  public dataSource: any;
   public filter: FormControl;
+  public columnsName: string[] = ['name', 'owner'];
+
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatSort, null) sort: MatSort;
   constructor(
     private gitHubeService: GithubService,
-
+    private translateService: TranslateService
   ) { super(); }
 
   ngOnInit() {
+    this.user = this.getStoragedJson(this.lsUser);
     this.filter = new FormControl('', {
     });
-    this.user = this.getStoragedJson(this.lsUser);
   }
   ngOnDestroy() {
     this.removeStoragedItem(this.lsUser);
@@ -40,7 +46,7 @@ export class UserDetailComponent extends BaseComponent implements OnInit, OnDest
     try {
       value = value.trim();
       value = value.toLowerCase();
-      this.repos.filter = value;
+      this.dataSource.filter = value;
     } catch (error) {
       console.log('filter() - error: ', error);
     }
@@ -48,13 +54,24 @@ export class UserDetailComponent extends BaseComponent implements OnInit, OnDest
 
   public async getRepos(sufix: string) {
     try {
+      let textUserRepos: string;
+      let textStarredRepos: string;
+      this.translateService.get([
+        'userRepos',
+        'starredReposTitle'
+      ]).subscribe(values => {
+        textUserRepos = values.userRepos;
+        textStarredRepos = values.starredReposTitle;
+      }).unsubscribe();
       const chackContext = ECheckContextView;
-      this.tableName = sufix === chackContext.repos ? 'Repositórios do usuário' : 'Repositótios estralados pelo usuário';
+      this.tableName = sufix === chackContext.repos ? textUserRepos : textStarredRepos;
       const result: Repo[] = await this.gitHubeService.getReposUserList(this.user.login, sufix).catch(error => {
-        console.log('TCL: UserDetailComponent -> getRepos -> error', error);
       }) as Repo[];
       if (result) {
         this.repos = result;
+        this.dataSource = new MatTableDataSource(this.repos);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
       }
     } catch (error) {
       console.log('getRepos() - error: ', error);
