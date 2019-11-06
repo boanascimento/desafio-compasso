@@ -17,6 +17,7 @@ import { UserDetailComponentModule } from './user-detail/user-detail.module';
 import { LazyLoadImageModule, scrollPreset } from 'ng-lazyload-image';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -51,6 +52,7 @@ export function createTranslateLoader(http: HttpClient) {
       preset: scrollPreset,
     }),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    DeviceDetectorModule.forRoot()
   ],
   providers: [
     BaseService,

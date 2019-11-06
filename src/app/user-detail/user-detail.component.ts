@@ -6,6 +6,8 @@ import { Repo } from 'src/models/starredRepo.module';
 import { FormControl } from '@angular/forms';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';
+import { DeviceDetectorService } from 'ngx-device-detector';
+import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 
 enum ECheckContextView {
   starred = 'starred',
@@ -30,7 +32,8 @@ export class UserDetailComponent extends BaseComponent implements OnInit, OnDest
   @ViewChild(MatSort, null) sort: MatSort;
   constructor(
     private gitHubeService: GithubService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private deviceService: DeviceDetectorService,
   ) { super(); }
 
   ngOnInit() {
@@ -52,7 +55,7 @@ export class UserDetailComponent extends BaseComponent implements OnInit, OnDest
     }
   }
 
-  public async getRepos(sufix: string) {
+  public async getRepos(sufix: string, el: HTMLElement) {
     try {
       let textUserRepos: string;
       let textStarredRepos: string;
@@ -72,6 +75,12 @@ export class UserDetailComponent extends BaseComponent implements OnInit, OnDest
         this.dataSource = new MatTableDataSource(this.repos);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
+        const isMobile = this.deviceService.isMobile();
+        if (isMobile) {
+          setTimeout(() => {
+            el.scrollIntoView();
+          }, 200);
+        }
       }
     } catch (error) {
       console.log('getRepos() - error: ', error);

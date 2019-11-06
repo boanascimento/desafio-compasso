@@ -37,22 +37,22 @@
       </mat-card>
       <div class="row align-items-center">
         <div class="col-md-6">
-          <button (click)="getRepos(setContextViewLike.repos)"
+          <button (click)="getRepos(setContextViewLike.repos, scroll)"
             class="btn btn-primary margin-bottom full-width">{{'repos' | translate}}</button>
         </div>
         <div class="col-md-6">
-          <button (click)="getRepos(setContextViewLike.starred)"
+          <button (click)="getRepos(setContextViewLike.starred, scroll)"
             class="btn btn-primary margin-bottom full-width">{{'starredRepos' | translate}}</button>
         </div>
       </div>
     </div>
-    <div class="col-md">
+    <div class="col-md" #scroll>
       <div *ngIf="repos.length > 0">
-        <h4 class="margin-bottom">
+        <h4 class="margin-bottom" >
           {{tableName}}
         </h4>
         <div *ngIf="repos.length > 0">
-          <mat-form-field class="full-width fade-in">
+          <mat-form-field class="full-width fade-in" >
             <input (keyup)="filterData($event.target.value)" matInput placeholder="{{ 'filter' | translate }}"
               [formControl]="filter" class="full-width">
           </mat-form-field>
