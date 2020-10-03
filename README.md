@@ -19,4 +19,4 @@ Para servir a aplicação deverrá ser utilizado o comando `ng serve` no prompt 
 Em tempo de desenvolvimento, foi criado um PWA ao executar os passos 
 - `ng add @angular/pwa`;
 - Alterado o nome do PWA que esterá na "Home screem" do usuário no arquivo `manifest.webmanifest`;
-- Alteradas as fores no mesmo arquivo apenas para diferenciar o PWA da aplicação no browser.
+- Alteradas as cores no mesmo arquivo apenas para diferenciar o PWA da aplicação no browser.
